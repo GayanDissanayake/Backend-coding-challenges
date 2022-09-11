@@ -15,6 +15,8 @@ class CreateAttendanceFaultsTable extends Migration
     {
         Schema::create('attendance_faults', function (Blueprint $table) {
             $table->id();
+            $table->integer('employee_id')->nullable();
+            $table->integer('attendance_id')->nullable();
             $table->timestamps();
         });
     }
