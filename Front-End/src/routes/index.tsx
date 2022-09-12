@@ -1,7 +1,5 @@
-import { Suspense, lazy, ElementType, useContext } from "react";
+import { Suspense, lazy, ElementType } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
-// import { AuthContext } from "../contexts/AuthContext";
-// import LoadingScreen from "../components/LoadingScreen";
 
 // ----------------------------------------------------------------------
 

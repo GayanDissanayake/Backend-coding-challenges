@@ -1,13 +1,7 @@
 import { useState } from "react";
-import {
-  Box,
-  Grid,
-  Typography,
-  TextField,
-  Button,
-  FormControl,
-} from "@mui/material";
+import { Box, Grid, Typography, TextField, Button } from "@mui/material";
 import axios from "axios";
+import HumanResourceTable from "./humanResourceTable";
 
 export default function ChallengeOne() {
   const [selectedFile, setSelectedFile] = useState<string>();
@@ -17,9 +11,7 @@ export default function ChallengeOne() {
   };
   const handleSubmit = () => {
     const formData = new FormData();
-    {
-      selectedFile && formData.append("file", selectedFile);
-    }
+    selectedFile && formData.append("file", selectedFile);
 
     axios
       .post("http://127.0.0.1:8000/api/upload-csv", formData)
@@ -30,14 +22,13 @@ export default function ChallengeOne() {
       .catch((err) => {
         if (err.toJSON().message === "Network Error") {
           alert(`Sorry, Couldn't connect with the Server.`);
-          // console.log('Please check your internet connection.');
         } else {
           console.log(err);
         }
       });
   };
   return (
-    <Box component={"div"} sx={{ width: "400px" }}>
+    <Box component={"div"}>
       <Grid item xs={12} sm={6}>
         <Typography
           variant="body1"
@@ -58,7 +49,7 @@ export default function ChallengeOne() {
           type="file"
           onChange={changeHandler}
           inputProps={{ accept: ".csv" }}
-          sx={{ pt: 1, pb: 2 }}
+          sx={{ pt: 1, pb: 2, width: "400px" }}
         />
       </Grid>
       <Button
@@ -68,6 +59,7 @@ export default function ChallengeOne() {
       >
         Submit
       </Button>
+      <HumanResourceTable />
     </Box>
   );
 }
