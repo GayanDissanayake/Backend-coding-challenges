@@ -12,4 +12,9 @@ class AttendanceController extends Controller
         return $data;
     }
 
+     public function getAttendance(Request $request){
+        $data = AttendanceService:: getAttendanceData($request);
+        return $data;
+    }
+
 }

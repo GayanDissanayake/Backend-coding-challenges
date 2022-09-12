@@ -19,4 +19,8 @@ class Attendance extends Model implements WithHeadingRow
 
     ];
 
+    public function schedule()
+    {
+        return $this->belongsTo('App\Models\Attendance\Domain\Schedule');
+    }
 }

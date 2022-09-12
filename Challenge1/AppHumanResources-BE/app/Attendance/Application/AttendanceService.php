@@ -15,4 +15,11 @@ class AttendanceService{
         return('Excel Data Imported Successfully');
     }
 
+    public static function getAttendanceData(Request $request){
+
+        $attendance = Attendance:: with(['schedule.employee', 'schedule.shift'])->get();
+
+        return($attendance);
+    }
+
 }

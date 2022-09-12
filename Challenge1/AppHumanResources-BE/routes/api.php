@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/upload-csv', 'App\Http\Controllers\AttendanceController@fileImport');
 
+Route::get('/retrieve-data', 'App\Http\Controllers\AttendanceController@getAttendance');
