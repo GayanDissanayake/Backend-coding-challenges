@@ -13,12 +13,10 @@ class GroupByOwnersService
         $companies = Company::all();
         $sampleArray = [];
         foreach ($companies as $key => $element) {
-            $document = Document::where('id', '=', $element->document_id)->first();
-            $element['companyName'] = $element->company_name;
-            $element['documentName'] = $document->document_name;
-            array_push($sampleArray, $element);
+            $documents = Document::where('company_id', '=', $element['id'])->pluck('document_name');
+            $data[] = [$element['company_name'] => $documents];
         }
-        return $sampleArray;
+        return $data;
 
     }
 }

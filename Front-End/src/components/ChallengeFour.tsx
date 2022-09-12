@@ -23,9 +23,7 @@ export default function ChallengeFour() {
       {data &&
         data.map((item, index) => (
           <Stack direction="row" key={index}>
-            <Typography>
-              {item.company_name} =&gt; {item.documentName}
-            </Typography>
+            <Typography>{JSON.stringify(item)}</Typography>
           </Stack>
         ))}
     </Box>
