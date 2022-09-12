@@ -3,6 +3,8 @@ import { Box, Grid, Typography, Button } from "@mui/material";
 
 export default function ChallengeTwo() {
   var array = Array();
+  const [displayArray, setDisplayArray] = useState<any[]>();
+
   const [occuranceArray, setOccuranceArray] = useState<any[]>();
   const inputRef = useRef<any>(null);
 
@@ -12,6 +14,7 @@ export default function ChallengeTwo() {
   }
 
   function calculateOccurance() {
+    setDisplayArray(array);
     const filtered = array.filter((v, i) => array.indexOf(v) !== i);
     const unique = new Set(filtered);
     const occuranceSet = Array.from(unique);
@@ -37,6 +40,10 @@ export default function ChallengeTwo() {
         <Button variant="contained" onClick={calculateOccurance} sx={{ mt: 3 }}>
           Calculate
         </Button>
+        <Typography variant="h6" sx={{ mt: 3 }}>
+          {" "}
+          Array Entered : {displayArray?.join(", ")}
+        </Typography>
         <Typography variant="h6" sx={{ mt: 3 }}>
           Numbers that Occured more than once : {occuranceArray?.join(", ")}
         </Typography>
