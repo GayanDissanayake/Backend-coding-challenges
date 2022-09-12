@@ -37,39 +37,37 @@ export default function ChallengeOne() {
       });
   };
   return (
-    <FormControl>
-      <Box sx={{ width: "400px" }}>
-        <Grid item xs={12} sm={6}>
-          <Typography
-            variant="body1"
-            sx={{
-              pt: "20px",
-              fontWeight: "bold",
-            }}
-          >
-            Upload Employee Data
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="csvFile"
-            type="file"
-            onChange={changeHandler}
-            inputProps={{ accept: ".csv" }}
-            sx={{ pt: 1, pb: 2 }}
-          />
-        </Grid>
-        <Button
-          variant="contained"
-          onClick={handleSubmit}
-          disabled={selectedFile === undefined}
+    <Box component={"div"} sx={{ width: "400px" }}>
+      <Grid item xs={12} sm={6}>
+        <Typography
+          variant="body1"
+          sx={{
+            pt: "20px",
+            fontWeight: "bold",
+          }}
         >
-          Submit
-        </Button>
-      </Box>
-    </FormControl>
+          Upload Employee Data
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField
+          margin="normal"
+          required
+          fullWidth
+          name="csvFile"
+          type="file"
+          onChange={changeHandler}
+          inputProps={{ accept: ".csv" }}
+          sx={{ pt: 1, pb: 2 }}
+        />
+      </Grid>
+      <Button
+        variant="contained"
+        onClick={handleSubmit}
+        disabled={selectedFile === undefined}
+      >
+        Submit
+      </Button>
+    </Box>
   );
 }
