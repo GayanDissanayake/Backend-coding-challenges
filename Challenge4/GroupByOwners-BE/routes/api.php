@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/application-details', 'App\Http\Controllers\GroupByOwnersController@getData');
+Route::get('/get-data', 'App\Http\Controllers\GroupByOwnersController@getData');

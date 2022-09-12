@@ -1,7 +1,9 @@
 // material
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { SyntheticEvent, useState } from "react";
+import ChallengeFour from "../../components/ChallengeFour";
 import ChallengeOne from "../../components/challengeOne";
+import ChallengeThree from "../../components/challengeThree";
 import ChallengeTwo from "../../components/challengeTwo";
 
 // ----------------------------------------------------------------------
@@ -53,6 +55,8 @@ export default function InitialPage() {
           >
             <Tab label="Challenge 1" {...a11yProps(0)} />
             <Tab label="Challenge 2" {...a11yProps(1)} />
+            <Tab label="Challenge 3" {...a11yProps(2)} />
+            <Tab label="Challenge 4" {...a11yProps(3)} />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
@@ -60,6 +64,12 @@ export default function InitialPage() {
         </TabPanel>
         <TabPanel value={value} index={1}>
           <ChallengeTwo />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <ChallengeThree />
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <ChallengeFour />
         </TabPanel>
       </Box>
     </>
