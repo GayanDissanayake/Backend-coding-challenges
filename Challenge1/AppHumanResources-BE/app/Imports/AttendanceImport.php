@@ -2,10 +2,11 @@
 
 namespace App\Imports;
 
-use App\Models\Attendance;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use App\Models\Attendance\Domain\Attendance;
 
-class AttendanceImport implements ToModel
+class AttendanceImport implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
@@ -15,7 +16,8 @@ class AttendanceImport implements ToModel
     public function model(array $row)
     {
         return new Attendance([
-            //
+            "employee_id" => $row['employee_id'],
+            "schedule_id" => $row['schedule_id'],
         ]);
     }
 }
