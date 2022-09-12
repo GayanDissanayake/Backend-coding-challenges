@@ -2,6 +2,7 @@
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { SyntheticEvent, useState } from "react";
 import ChallengeOne from "../../components/challengeOne";
+import ChallengeTwo from "../../components/challengeTwo";
 
 // ----------------------------------------------------------------------
 interface TabPanelProps {
@@ -58,7 +59,7 @@ export default function InitialPage() {
           <ChallengeOne />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Item Two
+          <ChallengeTwo />
         </TabPanel>
       </Box>
     </>
