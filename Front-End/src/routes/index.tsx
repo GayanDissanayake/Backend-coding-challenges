@@ -18,21 +18,14 @@ export default function Router() {
     {
       path: "/",
       children: [
-        { element: <Navigate to="/admission" replace />, index: true },
-        {
-          path: "admission",
-          children: [
-            {
-              element: <Navigate to="/admission/sign-in" replace />,
-              index: true,
-            },
-            { path: "sign-in", element: <Home /> },
-          ],
-        },
+        { element: <Navigate to="/initial" replace />, index: true },
+        { path: "initial", element: <Home /> },
       ],
     },
   ]);
 }
 
 // Main
-const Home = Loadable(lazy(() => import("../pages/human-resource/Initial")));
+const Home = Loadable(
+  lazy(() => import("../pages/app-human-resource/Initial"))
+);
